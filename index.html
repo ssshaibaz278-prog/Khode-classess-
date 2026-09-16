@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Khode Classes | Akash Khode</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f4f7fc;
+    color:#172033;
+}
+
+/* NAVBAR */
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(10px);
+    box-shadow:0 4px 20px rgba(0,0,0,.08);
+}
+
+nav{
+    max-width:1200px;
+    margin:auto;
+    padding:16px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:27px;
+    font-weight:800;
+    color:#14213d;
+}
+
+.logo span{
+    color:#e63946;
+}
+
+nav a{
+    text-decoration:none;
+    color:#27334d;
+    margin-left:22px;
+    font-weight:bold;
+}
+
+/* HERO */
+.hero{
+    max-width:1200px;
+    margin:35px auto;
+    padding:35px 20px;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:50px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-block;
+    background:#ffe7eb;
+    color:#c62839;
+    padding:10px 18px;
+    border-radius:30px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:clamp(45px,7vw,78px);
+    line-height:.95;
+    margin-bottom:22px;
+}
+
+h1 span{
+    color:#e63946;
+}
+
+.hero-text{
+    font-size:20px;
+    line-height:1.7;
+    color:#626d81;
+}
+
+.buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:28px;
+}
+
+.btn{
+    padding:14px 22px;
+    border-radius:13px;
+    text-decoration:none;
+    font-weight:bold;
+    display:inline-block;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.call{
+    background:#14213d;
+    color:white;
+}
+
+.whatsapp{
+    background:#20b95c;
+    color:white;
+}
+
+.maps{
+    background:#4285f4;
+    color:white;
+}
+
+/* PHOTO */
+.photo-card{
+    background:white;
+    padding:12px;
+    border-radius:28px;
+    box-shadow:0 20px 55px rgba(0,0,0,.16);
+}
+
+.photo-card img{
+    width:100%;
+    max-height:570px;
+    object-fit:cover;
+    object-position:center top;
+    border-radius:20px;
+    display:block;
+}
+
+/* SECTIONS */
+section{
+    max-width:1200px;
+    margin:55px auto;
+    padding:20px;
+}
+
+.title{
+    text-align:center;
+    font-size:38px;
+    margin-bottom:30px;
+}
+
+/* SUBJECTS */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:32px 20px;
+    border-radius:22px;
+    text-align:center;
+    box-shadow:0 8px 30px rgba(0,0,0,.07);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+.icon{
+    font-size:48px;
+    margin-bottom:13px;
+}
+
+.card h3{
+    font-size:22px;
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#687187;
+}
+
+/* VIDEO */
+.video-box{
+    background:white;
+    padding:30px;
+    border-radius:22px;
+    box-shadow:0 8px 30px rgba(0,0,0,.07);
+}
+
+.video-box h3{
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+.video-box p{
+    color:#687187;
+}
+
+.video-box input{
+    width:100%;
+    margin-top:18px;
+    padding:13px;
+    border:2px dashed #ccd3df;
+    border-radius:12px;
+}
+
+#videoPreview{
+    display:none;
+    width:100%;
+    max-height:500px;
+    margin-top:22px;
+    border-radius:18px;
+    background:black;
+}
+
+/* LOCATION */
+.location{
+    background:linear-gradient(135deg,#14213d,#263b66);
+    color:white;
+    text-align:center;
+    padding:50px 25px;
+    border-radius:30px;
+    box-shadow:0 18px 45px rgba(20,33,61,.25);
+}
+
+.location h2{
+    font-size:36px;
+    margin-bottom:18px;
+}
+
+.address{
+    font-size:20px;
+    line-height:1.9;
+    color:#e3e9f5;
+}
+
+.address strong{
+    color:white;
+    font-size:22px;
+}
+
+.location .buttons{
+    justify-content:center;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:40px 20px;
+    background:white;
+    color:#697287;
+    margin-top:60px;
+}
+
+footer strong{
+    color:#14213d;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+
+    nav{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    nav a{
+        margin:0 7px;
+        font-size:14px;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        margin-top:15px;
+    }
+
+    .cards{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:500px){
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    h1{
+        font-size:50px;
+    }
+
+    .hero-text{
+        font-size:17px;
+    }
+
+    .btn{
+        width:100%;
+        text-align:center;
+    }
+
+    .location h2{
+        font-size:29px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+<nav>
+
+<div class="logo">
+Khode <span>Classes</span>
+</div>
+
+<div>
+<a href="#subjects">Subjects</a>
+<a href="#videos">Videos</a>
+<a href="#contact">Location</a>
+</div>
+
+</nav>
+</header>
+
+
+<!-- HERO -->
+<section class="hero">
+
+<div>
+
+<div class="badge">
+👨‍🏫 Specialist Tutor
+</div>
+
+<h1>
+Akash <span>Khode</span>
+</h1>
+
+<p class="hero-text">
+📚 Biology • Physics • Chemistry • Mathematics
+<br>
+🎓 11th & 12th Science
+<br>
+💡 Concept-based learning, regular practice & video learning.
+</p>
+
+<div class="buttons">
+
+<a class="btn call"
+href="tel:8080510315">
+📞 Call Now
+</a>
+
+<a class="btn whatsapp"
+href="https://wa.me/918080510315"
+target="_blank">
+💬 WhatsApp
+</a>
+
+</div>
+
+</div>
+
+
+<!-- TEACHER PHOTO -->
+<div class="photo-card">
+
+<img
+src="1000027048.jpg"
+alt="Akash Khode - Khode Classes">
+
+</div>
+
+</section>
+
+
+<!-- SUBJECTS -->
+<section id="subjects">
+
+<h2 class="title">
+📚 Our Subjects
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<div class="icon">🧬</div>
+<h3>Biology</h3>
+<p>Concept Based Learning</p>
+</div>
+
+<div class="card">
+<div class="icon">⚡</div>
+<h3>Physics</h3>
+<p>Numericals & Concepts</p>
+</div>
+
+<div class="card">
+<div class="icon">🧪</div>
+<h3>Chemistry</h3>
+<p>Strong Fundamentals</p>
+</div>
+
+<div class="card">
+<div class="icon">📐</div>
+<h3>Mathematics</h3>
+<p>Practice & Problem Solving</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- VIDEO -->
+<section id="videos">
+
+<h2 class="title">
+🎥 Video Learning
+</h2>
+
+<div class="video-box">
+
+<h3>
+📤 Video Upload / Preview
+</h3>
+
+<p>
+Phone किंवा PC मधून video select करा आणि लगेच preview पहा.
+</p>
+
+<input
+type="file"
+id="videoFile"
+accept="video/*">
+
+<video
+id="videoPreview"
+controls>
+</video>
+
+</div>
+
+</section>
+
+
+<!-- LOCATION -->
+<section id="contact">
+
+<div class="location">
+
+<h2>
+📍 Khode Classes
+</h2>
+
+<div class="address">
+
+<p>
+<strong>Pimpalgaon Baswant</strong>
+</p>
+
+<p>
+Ghodke Nagar
+</p>
+
+<p>
+Rucha Hotel च्या मागे
+</p>
+
+<p>
+📚 Khode Classes</p>
+
+</div>
+
+
+<div class="buttons">
+
+<!-- GOOGLE MAPS -->
+<a
+class="btn maps"
+href="https://www.google.com/maps/search/?api=1&query=Khode+Classes,+Ghodke+Nagar,+Rucha+Hotel,+Pimpalgaon+Baswant"
+target="_blank">
+📍 Open Google Maps
+</a>
+
+
+<!-- CALL -->
+<a
+class="btn call"
+href="tel:8080510315">
+📞 8080510315
+</a>
+
+
+<!-- WHATSAPP -->
+<a
+class="btn whatsapp"
+href="https://wa.me/918080510315"
+target="_blank">
+💬 WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+© 2026 <strong>Khode Classes</strong>
+<br>
+Akash Khode – Specialist Tutor
+<br>
+Pimpalgaon Baswant • Ghodke Nagar
+
+</footer>
+
+
+<script>
+
+/* VIDEO PREVIEW */
+
+const videoFile =
+document.getElementById("videoFile");
+
+const videoPreview =
+document.getElementById("videoPreview");
+
+videoFile.addEventListener("change", function(){
+
+const file = this.files[0];
+
+if(!file){
+    return;
+}
+
+const videoURL =
+URL.createObjectURL(file);
+
+videoPreview.src = videoURL;
+
+videoPreview.style.display = "block";
+
+});
+
+</script>
+
+</body>
+</html>
